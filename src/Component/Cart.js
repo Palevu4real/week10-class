@@ -8,6 +8,8 @@ export default function Cart() {
     return (
         <div>
             <p>{cartItems}</p>
+            <button onClick={() => dispatch(increment())}>Add item to cart</button>
+            <button onClick={() => dispatch(decrement())}>Remove</button>
         </div>
     );
 }
