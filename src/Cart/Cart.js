@@ -13,9 +13,13 @@ export const counterSlice = createSlice({
       // immutable state based off those changes
       state.cartItems += 1
     },
-    decrement: state => {
+    decrement: state => { 
       state.cartItems -= 1
+      if ( state.cartItems < 1) {
+        state.cartItems = 0;
+      }
     },
+    
     incrementByAmount: (state, action) => {
       state.cartItems += action.payload
     }
